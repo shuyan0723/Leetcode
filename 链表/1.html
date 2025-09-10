@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单链表</title>
+</head>
+<body>
+    <script>
+        // 单链表 每个节点只包含一个指针，即后继指针
+        // 每一个节点除了包含数据还有下一个指针
+        // ->data next ->data next ->data next -> null
+        class Node{
+            constructor(data){
+                this.element=data;
+                this.next=null;
+            }
+        }
+        //     new Node('100')
+            
+        class LinkedList{
+            constructor(){
+                this.count=0;
+                this.head=null;
+            }
+            // push()
+            push(element){
+                const node =new Node(element)
+                console.log(node);
+                
+                // header 是空
+                if(this.head===null){
+                    this.head=node;
+                }else{
+                    let current=this.head;
+                    while(current.next!==null){
+                        current=current.next;
+                    }
+                    current.next=node;
+                }
+                this.count++
+            }
+            // 指定位置删除
+            removeAt(index){
+                if(index>=0 && index<this.count){
+                    let current=this.head;
+                     if(index===0){
+                        this.head=this.head.next;
+                        
+                     }else{
+                        let previous
+                       
+                        for(let i=0;i<index;i++){
+                            previous=current;
+                            current=current.next;
+                        }
+                        previous.next=current.next;
+
+                     }
+                     this.count--;
+                     return current.element;
+                }
+                  return undefined;
+            }
+            getNodeAt(index){
+                if(index>=0 && index<this.count){
+                    let node=this.head;
+                    for(let i=0;i<index;i++){
+                        node=node.next;
+                    }
+                    return node;
+                }
+                return undefined;
+            }
+        }
+             var list = new LinkedList()
+
+
+
+
+
+
+
+
+
+
+
+        // 双向链表 节点除了存储数据外，
+        // 还有两个指针分别指向前一个节点地址（前驱指针prev）
+        // 和下一个节点地址（后继指针next）
+         
+    </script>
+</body>
+</html>
