@@ -1,9 +1,9 @@
 function selecttionSort(arr){
     const {length} =arr;
 
-    let indexMinfor
+    let indexMin
     for(let i=0;i<length-1;i++){
-       
+       123
     }
 }
 
