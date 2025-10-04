@@ -1,17 +1,19 @@
 function selecttionSort(arr){
-    const {length} =arr;
+    const {length} = arr;
 
     let indexMin
-    for(let i=0;i<length-1;i++){
-       indexMin=i;
-       for(let j=i;j<length;j++){
-        if(arr[j]<arr[indexMin]){
-            indexMin=j;
+    for(let i=0; i<length-1; i++){
+       indexMin = i;
+       for(let j=i; j<length; j++){
+        if(arr[j] < arr[indexMin]){
+            indexMin = j;
         }
        }
-       if(indexMin!==i){
-        [arr[i],arr[indexMin]]=[arr[indexMin],arr[i]]
+       
+       if(indexMin !== i){
+        [arr[i], arr[indexMin]] = [arr[indexMin], arr[i]]
        }
+
     }
 }
 
